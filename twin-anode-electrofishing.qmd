@@ -99,13 +99,12 @@ Although the theory for population estimation by depletion electrofishing applie
 
 ```{r}
 #| label: analysis
-#| eval: false
 
 # choose analysis ---------------------------------------------------------
 
 # choose analyses
-do__orgdata <- 0
-do__analysis1 <- 0
+do__simdata <- 1
+do__exp1 <- 0
 
 # r setup -----------------------------------------------------------------
 source(here("scripts", "r-setup.R"))
@@ -124,11 +123,11 @@ anly_choices <- sapply(ls(pattern = "do__"), function(v) eval(parse(text = v)))
 do__anly <- ifelse(any(as.logical(anly_choices)), 1, 0)
 if (do__anly) {
   
-  # organise data -----------------------------------------------------------
-  if (do__orgdata) source(here("scripts", "00-orgdata.R"))
+  # simulate data -----------------------------------------------------------
+  if (do__simdata) source(here("scripts", "00-simdata.R"))
   
-  # analysis1 script --------------------------------------------------------
-  if (do__analysis1) source(here("scripts", "01-analysis1.R"))
+  # experiment 1 script -----------------------------------------------------
+  if (do__exp1) source(here("scripts", "01-exp1.R"))
   
 }
 
@@ -145,6 +144,33 @@ source(here("scripts", "close.R"))
 
 
 # Methods (900)
+
+## Plan
+
+1.    Simulate example in which the population estimates are the same whether using single or double anode sampling strategies, i.e., where *p* using single anode is half of *p* using double anode.
+
+2.    Simulate example in which the population estimates are different when using single or double anode sampling strategies because a certain proportion of the fish population circumvent the anode and are thereby unavailable to the single anode sampling strategy. 
+
+
+
+# Results (500)
+
+![](plots/example-simulation.jpg)
+
+
+# Discussion (800)
+
+
+# Conclusion (200)
+
+
+# References
+
+::: {#refs}
+:::
+
+
+# Appendix
 
 From: <https://fishr-core-team.github.io/FSA/reference/removal.html>
 
@@ -168,14 +194,3 @@ Computes estimates, with confidence intervals, of the population size and probab
 
 See also: <https://fishr-core-team.github.io/FSA/reference/depletion.html>
 
-
-# Results (500)
-
-# Discussion (800)
-
-# Conclusion (200)
-
-# References
-
-::: {#refs}
-:::

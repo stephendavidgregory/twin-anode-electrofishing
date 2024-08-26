@@ -1,4 +1,4 @@
-# analysis 1 script -------------------------------------------------------
+# experiment 1 script -----------------------------------------------------
 
 ## a script `sourced` by the .qmd to run the first analysis.
 
@@ -34,13 +34,8 @@
 
 # read in organised data --------------------------------------------------
 
-# ## read in latest processed data
-# f_nms <- list.files(path = here("Data"), pattern = __DATANAME__)
-# if (length(f_nms) != 0) {
-#   f_dts <- as.Date(gsub("[a-zA-Z_.]", "\\1", f_nms), "%d%m%Y")
-#   f_fle <- f_nms[order(f_dts, decreasing = TRUE)][1]
-#   load(here("data", f_fle))
-# }
+
+# - make a dataset in which a given proportion of fish circumvent the anode field
 
 
 # section -----------------------------------------------------------------

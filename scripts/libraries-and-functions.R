@@ -4,6 +4,8 @@
 library(here)
 library(ggplot2)
 library(extrafont)
+library(data.table)
+library(FSA)
 
 ## potentially useful packages
 # library(mathml) # for producing latex output from expressions - see https://github.com/mgondan/mathml
@@ -24,7 +26,7 @@ sgg <- function(fs = 16) {
 }
 
 # remove space between panels
-squeeze_panels <- theme(panel.spacing = grid::unit(0, "lines")) 
+squeeze_panels <- theme(panel.spacing = grid::unit(0, "lines"))
 
 # default ggplot colours - specify n
 ggplotColours <- function(n = 6, h = c(0, 360) + 15){
@@ -32,5 +34,5 @@ ggplotColours <- function(n = 6, h = c(0, 360) + 15){
   hcl(h = (seq(h[1], h[2], length = n)), c = 100, l = 65)
 }
 
-# an alternative colour blind palette - use: scale_fill_manual(values=cbPalette), scale_colour_manual(values=cbPalette), etc.
+# an alternative colour blind palette - use: scale_fill_manual(values = cbPalette), scale_colour_manual(values = cbPalette), etc.
 cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
