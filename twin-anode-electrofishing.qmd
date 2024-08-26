@@ -1,0 +1,181 @@
+---
+# Document details
+title: "Considerations when deciding whether to do depletion electrofishing with single or double anodes"
+# date: "`r format(Sys.time(), "%A %d %B %Y")`"
+authors: 
+  - name: Stephen D. Gregory$^{1,2,*}$
+    orcid: 0000-0002-8230-0191
+  - name: _et al_.
+email: "[stephen.gregory@cefas.gov.uk](mailto:stephen.gregory@cefas.gov.uk)"
+abstract: |
+
+  $^{1}$ The Centre for Environment, Fisheries and Aquaculture Science, Barrack Road, Weymouth, Dorset DT4 8UB, UK
+
+  $^{2}$ Department of Life and Environmental Sciences, Faculty of Science and Technology, Bournemouth University, Poole BH12 5BB, UK
+
+  \* Corresponding author: tel: +44 1929 330 437; email: {{< meta email >}}
+abstract-title: Affiliations
+  
+# Output details
+format: 
+  html:
+    number-sections: false
+    embed-resources: true
+  docx:
+    number-sections: true
+    highlight-style: github
+
+# Quarto execute options
+execute: 
+  eval: true
+  echo: false
+  message: false
+  warning: false
+  code-fold: true
+  code-summary: "expand for full code"
+  fig-align: "center"
+
+# other quarto options
+from: markdown+emoji
+
+# References
+csl: ecology.csl # more at www.zotero.org/styles
+bibliography: references.bib
+link-citations: true
+
+# Analysis details
+version: "`r version$version.string`"
+packages: ""
+dependencies: ""
+---
+
+```{r}
+#| label: doc_setup
+
+# document setup ----------------------------------------------------------
+
+# clear workspace
+rm(list = ls())
+
+# document setup
+library(here)
+library(readxl)
+
+```
+
+**Short title** Population estimates from single and double anode electrofishing can differ
+
+**Keywords** electro-fishing, electric fishing, single-anode, double-anode, twin-anode
+
+
+## Main message
+
+Although the theory for population estimation by depletion electrofishing applies equally to sampling by single and double anodes, the assumptions can differ leading to different population estimates.
+
+
+## Abstract
+
+<!-- * Why are you doing this? [context and aim] -->
+
+1.    Depletion electrofishing, whereby a fish population is sampled by electric fishing repeatedly without replacement (i.e., fish are retained between samples), is a standard sampling strategy underpinning by several estimators [e.g., @Carle1978] that estimate the fish population size. When electrofishing, an electrofisher usually operates a single anode systematically throughout the survey site to which fish move via electrotaxis to be captured in a handheld net. When depletion electrofishing, it is common for a single electrofisher with a single anode (hereafter referred to collectively as an "anode") to sample the population. In certain circumstances, however, a population might be better sampled using a second anode simultaneously. For example, a large sampling site might be more efficiently sampled using a double or twin anodes. Although most estimators will estimate the same population size whether sampling is done using a single or double anode sampling strategy, the assumptions underpinning the sampling strategies are not always consistent, and so the final estimated populations sizes can be different.
+
+<!-- * What did you do? [methods] -->
+
+2.    Here, I using a series of simple simulation experiments to show that common reasons for deciding whether to use a single or double anode sampling strategy will result in different population estimates precisely for the reasons on which those decisions are based.
+
+<!-- * What did you find? [core results] -->
+
+3.    Final estimates of populations sizes differ by amounts that are directly proportional to the proportion of fish that are not sampled because they are unavailable to one or other sampling strategy or missed as a consequence of differences in the sampling strategy implementations.
+
+<!-- * What does this mean? [interpretation in context] -->
+
+4.    Care should be taken when deciding to sample by depletion electrofishing using a single or double anode sampling strategy. When the assumptions of the sampling strategies are identical and met, then estimators will give the same population estimates. If, however, the assumptions of the sampling strategies are different or not met, then the estimates will be different and incomparable (without suitable correction).
+
+<!-- * What is it good for? [application] -->
+5.    *Synthesis and application* To do.
+
+
+<!-- Analysis starts here Analysis starts here Analysis starts here Analysis starts here -->
+
+```{r}
+#| label: analysis
+#| eval: false
+
+# choose analysis ---------------------------------------------------------
+
+# choose analyses
+do__orgdata <- 0
+do__analysis1 <- 0
+
+# r setup -----------------------------------------------------------------
+source(here("scripts", "r-setup.R"))
+
+# libraries & functions ---------------------------------------------------
+source(here("scripts", "libraries-and-functions.R"))
+
+# analysis options --------------------------------------------------------
+source(here("scripts", "analysis-options.R"))
+
+# analysis options --------------------------------------------------------
+source(here("scripts", "global-variables.R"))
+
+# if any analyses chosen, then do analysis
+anly_choices <- sapply(ls(pattern = "do__"), function(v) eval(parse(text = v)))
+do__anly <- ifelse(any(as.logical(anly_choices)), 1, 0)
+if (do__anly) {
+  
+  # organise data -----------------------------------------------------------
+  if (do__orgdata) source(here("scripts", "00-orgdata.R"))
+  
+  # analysis1 script --------------------------------------------------------
+  if (do__analysis1) source(here("scripts", "01-analysis1.R"))
+  
+}
+
+# close ---------------------------------------------------------------------
+source(here("scripts", "close.R"))
+
+```
+
+\newpage
+
+<!-- Document starts here Document starts here Document starts here Document starts here -->
+
+# Introduction (600)
+
+
+# Methods (900)
+
+From: <https://fishr-core-team.github.io/FSA/reference/removal.html>
+
+Computes estimates, with confidence intervals, of the population size and probability of capture from the number of fish removed in k-, 3-, or 2-passes in a closed population. Can use the following methods: 
+
+-   method="CarleStrub": The general weighted k-pass estimator proposed by Carle and Strub (1978). This function iteratively solves for No in equation 7 of Carle and Strub (1978).
+
+-   method="Zippin": The general k-pass estimator generally attributed to Zippin. This function iteratively solves for No in bias corrected version of equation 3 (page 622) of Carle and Strub (1978). These results are not yet trustworthy (see Testing section below).
+
+-   method="Seber3": The special case for k=3 estimator shown in equation 7.24 of Seber(2002).
+
+-   method="Seber2": The special case for k=2 estimator shown on page 312 of Seber(2002).
+
+-   method="RobsonRegier2": The special case for k=2 estimator shown by Robson and Regier (1968).
+
+-   method="Moran": The likelihood method of Moran (1951) as implemented by Schnute (1983).
+
+-   method="Schnute": The likelihood method of Schnute (1983) for the model that has a different probability of capture for the first sample but a constant probability of capture for all ensuing samples.
+
+-   method="Burnham": The general k-pass estimator likelihood method created by Ken Burnham and presented by Van Deventer and Platts (1983). This method is used in the Microfish software (Van Deventer 1989).
+
+See also: <https://fishr-core-team.github.io/FSA/reference/depletion.html>
+
+
+# Results (500)
+
+# Discussion (800)
+
+# Conclusion (200)
+
+# References
+
+::: {#refs}
+:::
