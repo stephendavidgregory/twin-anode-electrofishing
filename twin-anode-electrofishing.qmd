@@ -1,6 +1,6 @@
 ---
 # Document details
-title: "Considerations when deciding whether to do depletion electrofishing with single or double anodes"
+title: "Considerations when deciding whether to do depletion electrofishing with single or twin anodes"
 # date: "`r format(Sys.time(), "%A %d %B %Y")`"
 authors: 
   - name: Stephen D. Gregory$^{1,2,*}$
@@ -63,25 +63,25 @@ library(readxl)
 
 ```
 
-**Short title** Population estimates from single and double anode electrofishing can differ
+**Short title** Population estimates from single and twin anode electrofishing can differ
 
 **Keywords** electro-fishing, electric fishing, single-anode, double-anode, twin-anode
 
 
 ## Main message
 
-Although the theory for population estimation by depletion electrofishing applies equally to sampling by single and double anodes, the assumptions can differ leading to different population estimates.
+Although the theory for population estimation by depletion electrofishing applies equally to sampling by single and twin anodes, the assumptions can differ leading to different population estimates.
 
 
 ## Abstract
 
 <!-- * Why are you doing this? [context and aim] -->
 
-1.    Depletion electrofishing, whereby a fish population is sampled by electric fishing repeatedly without replacement (i.e., fish are retained between samples), is a standard sampling strategy underpinning by several estimators [e.g., @Carle1978] that estimate the fish population size. When electrofishing, an electrofisher usually operates a single anode systematically throughout the survey site to which fish move via electrotaxis to be captured in a handheld net. When depletion electrofishing, it is common for a single electrofisher with a single anode (hereafter referred to collectively as an "anode") to sample the population. In certain circumstances, however, a population might be better sampled using a second anode simultaneously. For example, a large sampling site might be more efficiently sampled using a double or twin anodes. Although most estimators will estimate the same population size whether sampling is done using a single or double anode sampling strategy, the assumptions underpinning the sampling strategies are not always consistent, and so the final estimated populations sizes can be different.
+1.    Depletion electrofishing, whereby a fish population is sampled by electric fishing repeatedly without replacement (i.e., fish are retained between samples), is a standard sampling strategy underpinning by several estimators [e.g., @Carle1978] that estimate the fish population size. When electrofishing, an electrofisher usually operates a single anode systematically throughout the survey site to which fish move via electrotaxis to be captured in a handheld net. When depletion electrofishing, it is common for a single electrofisher with a single anode (hereafter referred to collectively as an "anode") to sample the population. In certain circumstances, however, a population might be better sampled using a second anode simultaneously. For example, a large sampling site might be more efficiently sampled using twin anodes. Although most estimators will estimate the same population size whether sampling is done using a single or twin anode sampling strategy, the assumptions underpinning the sampling strategies are not always consistent, and so the final estimated populations sizes can be different.
 
 <!-- * What did you do? [methods] -->
 
-2.    Here, I using a series of simple simulation experiments to show that common reasons for deciding whether to use a single or double anode sampling strategy will result in different population estimates precisely for the reasons on which those decisions are based.
+2.    Here, I using a series of simple simulation experiments to show that common reasons for deciding whether to use a single or twin anode sampling strategy will result in different population estimates precisely for the reasons on which those decisions are based.
 
 <!-- * What did you find? [core results] -->
 
@@ -89,7 +89,7 @@ Although the theory for population estimation by depletion electrofishing applie
 
 <!-- * What does this mean? [interpretation in context] -->
 
-4.    Care should be taken when deciding to sample by depletion electrofishing using a single or double anode sampling strategy. When the assumptions of the sampling strategies are identical and met, then estimators will give the same population estimates. If, however, the assumptions of the sampling strategies are different or not met, then the estimates will be different and incomparable (without suitable correction).
+4.    Care should be taken when deciding to sample by depletion electrofishing using a single or twin anode sampling strategy. When the assumptions of the sampling strategies are identical and met, then estimators will give the same population estimates. If, however, the assumptions of the sampling strategies are different or not met, then the estimates will be different and incomparable (without suitable correction).
 
 <!-- * What is it good for? [application] -->
 5.    *Synthesis and application* To do.
@@ -147,9 +147,9 @@ source(here("scripts", "close.R"))
 
 ## Plan
 
-1.    Simulate example in which the population estimates are the same whether using single or double anode sampling strategies, i.e., where *p* using single anode is half of *p* using double anode.
+1.    Simulate example in which the population estimates are the same whether using single or twin anode sampling strategies, i.e., where *p* using single anode is half of *p* using twin anode.
 
-2.    Simulate example in which the population estimates are different when using single or double anode sampling strategies because a certain proportion of the fish population circumvent the anode and are thereby unavailable to the single anode sampling strategy. 
+2.    Simulate example in which the population estimates are different when using single or twin anode sampling strategies because a certain proportion of the fish population circumvent the anode and are thereby unavailable to the single anode sampling strategy. E.g., if number of fish caught differ, but $p$ is estimated to be similar for single- and twin- anode fishing, then the total estimates will be proportionally different and suggest that a proportion of the population is not available to be captured by single-anode fishing.
 
 
 
