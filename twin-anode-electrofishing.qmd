@@ -142,20 +142,21 @@ source(here("scripts", "close.R"))
 
 # Introduction (600)
 
+  - We assume e-fishing surveyor biases their effort toward suitable habitat
+  - We note that twin versus single anode surveying will (at least?) double the area exposed to the electric field and so should therefore increase catch
+
 
 # Methods (900)
 
 ## Plan
 
-1.    Simulate example in which the population estimates are the same whether using single or twin anode sampling strategies, i.e., where *p* using single anode is half of *p* using twin anode.
-
-2.    Simulate example in which the population estimates are different when using single or twin anode sampling strategies because a certain proportion of the fish population circumvent the anode and are thereby unavailable to the single anode sampling strategy. E.g., if number of fish caught differ, but $p$ is estimated to be similar for single- and twin- anode fishing, then the total estimates will be proportionally different and suggest that a proportion of the population is not available to be captured by single-anode fishing.
-
+  1.  Create a closed population distributed throughout the survey area in accordance with some habitat suitability measure, including flow, depth, and Ranunculus cover
+  2.  Sample the population as a correlated random walk (CRW) influenced by the habitat suitability measure and using a single anode with effective detection radius (EDR) specified as a function of distance and conductivity
+  3.  Repeat the sampling with twin anodes ensuring no overlap between their EDRs
+  4.  Optionally, allow for overlap between twin anode EDRs
 
 
 # Results (500)
-
-![](plots/example-simulation.jpg)
 
 
 # Discussion (800)
