@@ -8,5 +8,5 @@ For questions or to be involved, please [email me](mailto:stephendavidgregory@gm
 
 ## Collaborators
 
-  - Jess Marsh (jem-fishy)
+  - Jess Marsh ([jem-fishy](https://github.com/jem-fishy))
 
