@@ -70,7 +70,7 @@ library(readxl)
 
 ## Main message
 
-Although the theory for population estimation by depletion electrofishing applies equally to sampling by single and twin anodes, the assumptions can differ leading to different population estimates.
+Although the theory for population estimation by depletion electrofishing applies equally to sampling by single and twin anodes, changing from single- to twin-anode sampling (or vice versa), due to changes in river channel (e.g., due to installation or removal of an impoundment) is not straightforward.
 
 
 ## Abstract
@@ -81,7 +81,7 @@ Although the theory for population estimation by depletion electrofishing applie
 
 <!-- * What did you do? [methods] -->
 
-2.    Here, I using a series of simple simulation experiments to show that common reasons for deciding whether to use a single or twin anode sampling strategy will result in different population estimates precisely for the reasons on which those decisions are based.
+2.    Here, we use a series of simple simulation experiments to show that common reasons for deciding whether to use a single or twin anode sampling strategy will result in different population estimates precisely for the reasons on which those decisions are based.
 
 <!-- * What did you find? [core results] -->
 
